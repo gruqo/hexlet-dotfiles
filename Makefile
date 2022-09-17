@@ -1,3 +1,20 @@
+name: python-app
+
+  on:
+    push:
+      branches: [ master ]
+    pull_request:
+      branches: [ master ]
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+      - name: build application
+        run: make build
+
 #all: nvim-install dotfiles-install
 #
 #TAGS := all
